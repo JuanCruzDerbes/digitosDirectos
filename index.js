@@ -4,7 +4,7 @@ app.use(express.static(__dirname + "/public"));
 app.get("/resultado", (req, res) => {
   res.send();
 });
-app.set("port", process.env.PORT || 8888);
+app.set("port", process.env.PORT || 8888);// Es para setear el puerto default
 app.get("/", (req, res) => {
   let numAr = GenerarNumerosAleatorios();
   let numArContainer = "";
@@ -101,14 +101,14 @@ app.listen(app.get("port"), () => {
   console.log(`Servidor iniciado en el${app.get("port")}`);
 });
 function GenerarNumerosAleatorios() {
-  var arrayNumerosAleatorios = [];
+  var arrayNumerosAleatorios = [];//Genera "contenedores para los numeros" Arrays
   var n = 2;
-  for (var i = 0; i < 9; i++) {
+  for (var i = 0; i < 9; i++) {// Se seguiran generando arrays hasta que el juego acabe
     var numerosAleatorios = [];
     for (var x = 0; x < n; x++) {
       var numAleatorio = Math.round(Math.random() * 9);
       if (numerosAleatorios.includes(numAleatorio) == false) {
-        numerosAleatorios.push(numAleatorio);
+        numerosAleatorios.push(numAleatorio);//Hace que no se repitan los numeros en el mismo orden 
       } else {
         x--;
       }
