@@ -40,7 +40,7 @@ function MN() { //mostrar numeros
     container8.style.display = "none";
     container11.style.display = "none";
     container9.innerHTML = "";
-    container10.innerHTML = ".";
+    container10.innerHTML = ".";// Es el punto que aparece en el intervalo entre numeros
     var interval = setInterval(() => {
       i++;
       container10.innerHTML = container12[x][i];
@@ -62,7 +62,7 @@ function CR() { //Comprobar respuesta
   let n2 = container12[x].toString();
   n2 = n2.replaceAll(",", " ") + " ";
   if (n2 == container9.innerHTML) {
-    if (x === 0) {
+    if (x == 0) {
       container13[x].setAttribute("acertado", "true");
       container13[x + 1].setAttribute("acertado", "true");
     } else {
